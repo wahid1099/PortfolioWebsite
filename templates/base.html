@@ -1,0 +1,48 @@
+
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with Steller landing page.">
+    <meta name="author" content="Devcrud">
+    <title>MD WAHID PORTFOLIO</title>
+    <!-- font icons -->
+    <link rel="stylesheet" href="{% static 'vendors/themify-icons/css/themify-icons.css' %}">
+    <!-- Bootstrap + Steller main styles -->
+	<link rel="stylesheet" href="{% static 'css/steller.css' %}">
+
+</head>
+
+
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+
+
+    <div>
+        {%include 'navbar/navbar.html' %}
+         {% block content %}
+          {% endblock content%} 
+          
+        
+      </div>
+  
+  
+       
+        {%block scripts%}
+  
+        {%endblock scripts%}
+        
+
+
+<!-- core  -->
+<script src="{%static 'vendors/jquery/jquery-3.4.1.js'%}"></script>
+<script src="{%static 'vendors/bootstrap/bootstrap.bundle.js'%}"></script>
+<!-- bootstrap 3 affix -->
+<script src="{%static 'vendors/bootstrap/bootstrap.affix.js'%}"></script>
+
+<!-- steller js -->
+<script src="{%static 'js/steller.js'%}"></script>
+
+</body>
+</html>

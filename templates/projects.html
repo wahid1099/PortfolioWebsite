@@ -1,0 +1,48 @@
+{%load static%}
+   
+<!-- Blog Section -->
+ <section id="projects" class="section">
+     <div class="container text-center">
+         <h2 class="section-title mb-4">MY PROJECTS</h2>
+       
+      {%if project %}   
+      <div class="row text-left">
+      {%for p in project %}
+
+        
+             <div class="col-md-4">
+                 <div class="card border mb-4">
+                     <img src="{{p.project_image.url}}" alt="" class="card-img-top w-100">
+                     <div class="card-body">
+                         <h5 class="card-title">{{p.project_name}}</h5>
+                         <div class="post-details">
+                             <a href="javascript:void(0)">Posted By: Admin</a>
+                             <a href="javascript:void(0)"><i class="ti-thumb-up"></i> 456</a>
+                             <a href="javascript:void(0)"><i class="ti-comment"></i> 123</a>
+                         </div>
+                         <p>{{p.description}}.</p>
+                         <a href="javascript:void(0)">Read More..</a>
+
+                         <div class="socials mt-4">
+                           
+                            {%if p.gihubLink%}
+                            <a class="social-item" href="{{p.gihubLink}}" target="_blank"><i class="ti-github"></i></a>
+                            {%endif%}
+                            {%if p.live_link%}
+                            <a class="social-item" href="{{p.live_link}}" target="_blank"><i class="ti-link"></i></a>{%endif%}
+                            {%if p.serversite%}
+                            <a class="social-item" href="{{p.serversite}}" target="_blank"><i class="ti-server"></i></a>
+                            {%endif%}
+                        </div>
+                     </div>
+                 </div>
+             </div>
+             
+        
+         {%endfor%}
+        </div>
+         {%else%}
+
+         {%endif%}
+     </div>
+ </section>
