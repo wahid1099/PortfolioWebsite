@@ -15,3 +15,17 @@
     
 {% endblock content %}
 
+
+{%block scripts%}
+
+{% for msg in messages %}
+<script>   
+
+
+
+  alertify.set('notifier','position', 'top-right');
+  alertify.message('{{msg}}');
+  </script>
+{%endfor%}
+
+{%endblock scripts%}

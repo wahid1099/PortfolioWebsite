@@ -11,7 +11,9 @@
                         <p class="mb-3">Thanks for reaching out me.</p>
                     </div>
                     <div class="col-sm-3 text-center text-sm-right">
-                        <button class="btn btn-light rounded">Hire Me!</button>
+                        <li class="nav-item">
+                            <a class="- btn btn-light rounded ml-4" href="https://www.linkedin.com/in/md-wahid1/" target="_blank">HIRE ME</a>
+                        </li>
                     </div>
                 </div>
             </div> 
@@ -31,15 +33,16 @@
             <div class="form">
                 <h6 class="subtitle">Available 24/7</h6>
                 <h6 class="section-title mb-4">Get In Touch</h6>
-                <form>
+                <form  method="POST" enctype='multipart/form-data'>
+                    {%csrf_token%}
                     <div class="form-group">
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="email" required>
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Name" name="name" required>
                     </div>
                     <div class="form-group">
-                        <textarea name="contact-message" id="" cols="30" rows="5" class="form-control" placeholder="Message"></textarea>
+                        <textarea  id="" cols="30" rows="5" class="form-control" placeholder="Message" name="message"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary btn-block rounded w-lg">Send Message</button>
                 </form>
@@ -80,14 +83,15 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-sm-6">
-                <p>Copyright <script>document.write(new Date().getFullYear())</script> &copy; <a href="http://www.devcrud.com" target="_blank">WAHID</a></p>
+                <p>Copyright <script>document.write(new Date().getFullYear())</script> &copy; <a href="https://www.linkedin.com/in/md-wahid1/" target="_blank">WAHID</a></p>
             </div>
             <div class="col-sm-6">
-                <div class="socials">
-                    <a class="social-item" href="javascript:void(0)"><i class="ti-facebook"></i></a>
-                    <a class="social-item" href="javascript:void(0)"><i class="ti-google"></i></a>
-                    <a class="social-item" href="javascript:void(0)"><i class="ti-github"></i></a>
-                    <a class="social-item" href="javascript:void(0)"><i class="ti-twitter"></i></a>
+                <div class="socials mt-4">
+                    <a class="social-item"  href="{{facebook_link.link}}"><i class="ti-facebook"></i></a>
+                    <a class="social-item"  href="{{linkedin_link.link}}"><i class="ti-linkedin"></i></a>
+                    <a class="social-item"  href="{{github_link.link}}"><i class="ti-github"></i></a>
+                    <a class="social-item"  href="{{twitter_link.link}}"><i class="ti-twitter"></i></a>
+                    <a class="social-item"  href="{{youtube_link.link}}"><i class="ti-youtube"></i></a>
                 </div>
             </div>
         </div>

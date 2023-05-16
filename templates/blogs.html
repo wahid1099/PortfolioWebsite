@@ -1,58 +1,49 @@
-   {%load static%}
+{%load static%}
    
-   <!-- Blog Section -->
-    <section id="blog" class="section">
-        <div class="container text-center">
-            <h6 class="subtitle">My Blogs</h6>
-            <h6 class="section-title mb-4">Latest News</h6>
-            <p class="mb-5 pb-4">HEY WELCOME TO MY BLOGS.</p>
+<!-- Blog Section -->
+ <section id="projects" class="section">
+     <div class="container text-center">
+         <h2 class="section-title mb-4">MY BLOGS</h2>
+       
+      {%if blog %}   
+      <div class="row text-left">
+      {%for b in blog %}
 
-            <div class="row text-left">
-                <div class="col-md-4">
-                    <div class="card border mb-4">
-                        <img src="{%static 'imgs/blog-1.jpg'%}" alt="" class="card-img-top w-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Designe for Everyone</h5>
-                            <div class="post-details">
-                                <a href="javascript:void(0)">Posted By: Admin</a>
-                                <a href="javascript:void(0)"><i class="ti-thumb-up"></i> 456</a>
-                                <a href="javascript:void(0)"><i class="ti-comment"></i> 123</a>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut ad vel dolorum, iusto velit, minima? Voluptas nemo harum impedit nisi.</p>
-                            <a href="javascript:void(0)">Read More..</a>
+        
+             <div class="col-md-4">
+                 <div class="card border mb-4">
+                     <img src="{{b.blog_image.url}}" alt="" class="card-img-top w-100">
+                     <div class="card-body">
+                         <h5 class="card-title">{{b.blog_name}}</h5>
+                         <div class="post-details">
+                             <a href="javascript:void(0)">Posted By: Admin</a>
+                             <a href="javascript:void(0)"><i class="ti-thumb-up"></i> 456</a>
+                             <a href="javascript:void(0)"><i class="ti-comment"></i> 123</a>
+                         </div>
+                         <a href="javascript:void(0)"><i class="ti-time"></i> Posted Date:{{b.created_at}}</a>
+
+                         <p>{{b.descriptions|slice:":50"}}
+                            
+                            ...</p>
+                         {% comment %} <a href="javascript:void(0)">Read More..</a> {% endcomment %}
+
+                         <div class="socials mt-4">
+                           
+                            
+                            {%if p.live_link%}
+                            <a class="social-item" href="{{p.live_link}}" target="_blank"><i class="ti-link"></i></a>{%endif%}
+                            
+                          
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card border mb-4">
-                        <img src="{%static 'imgs/blog-2.jpg'%}" alt="" class="card-img-top w-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Web Layouts</h5>
-                            <div class="post-details">
-                                <a href="javascript:void(0)">Posted By: Admin</a>
-                                <a href="javascript:void(0)"><i class="ti-thumb-up"></i> 456</a>
-                                <a href="javascript:void(0)"><i class="ti-comment"></i> 123</a>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut ad vel dolorum, iusto velit, minima? Voluptas nemo harum impedit nisi.</p>
-                            <a href="javascript:void(0)">Read More..</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card border mb-4">
-                        <img src="{%static 'imgs/blog-3.jpg'%}" alt="" class="card-img-top w-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Bootstrap Framework</h5>
-                            <div class="post-details">
-                                <a href="javascript:void(0)">Posted By: Admin</a>
-                                <a href="javascript:void(0)"><i class="ti-thumb-up"></i> 456</a>
-                                <a href="javascript:void(0)"><i class="ti-comment"></i> 123</a>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut ad vel dolorum, iusto velit, minima? Voluptas nemo harum impedit nisi.</p>
-                            <a href="javascript:void(0)">Read More..</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                     </div>
+                 </div>
+             </div>
+             
+        
+         {%endfor%}
         </div>
-    </section>
+         {%else%}
+
+         {%endif%}
+     </div>
+ </section>
